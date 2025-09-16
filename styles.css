@@ -3,9 +3,34 @@ body {
 }
 
 main {
-    max
-    & button {
-        background-color: blue;
+     & .container {
+
+        background-color: white;
+        padding: 10px;
         border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+
+        #frase {
+            min-height: 30px;
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 90%;
+            font-size: larger;
+        }
+
+        & button {
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+            font-size: larger;
+            border-radius: 10px;
+            padding: 10px;
+            width: 90%;
+        }
+
     }
 }

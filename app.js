@@ -1,4 +1,8 @@
-const FRASES = ['Frase 1', 'Frase 2', 'Frase 3', 'Frase 4', 'Frase 5'];
+const FRASES = ["Cree en ti y todo será posible.",
+  "Cada día es una nueva oportunidad.",
+  "El esfuerzo de hoy es el éxito de mañana.",
+  "No te detengas hasta estar orgulloso.",
+  "Los grandes cambios empiezan con pequeños pasos."];
 
 const fraseDiv = document.getElementById('frase');
 const button = document.getElementById('cambiar-frase');

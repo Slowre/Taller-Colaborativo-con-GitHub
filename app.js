@@ -9,6 +9,7 @@ const FRASES = [
 const fraseDiv = document.getElementById('frase');
 const button = document.getElementById('cambiar-frase');
 const contadorEl = document.getElementById('contador');
+
 const nuevaFraseInput = document.getElementById('nueva-frase');
 const agregarButton = document.getElementById('agregar-frase');
 const guardarButton = document.getElementById('guardar-frase');
@@ -16,6 +17,9 @@ const cancelarButton = document.getElementById('cancelar-frase');
 const modalAgregar = document.getElementById('modal-agregar');
 const modalClose = document.getElementById('modal-close');
 const modalBackdrop = document.querySelector('.modal-backdrop');
+
+const contenedor = document.getElementById('container');
+
 
 let contador = 0;
 function actualizarContador() {
@@ -49,9 +53,24 @@ function cambiarFrase() {
   if (mostrarFrase(nuevo)) {
     contador += 1;
     actualizarContador();
+    changeColor()
   }
 }
 
+
+function changeColor() {
+  const red = getRandomInt(256)
+  const green = getRandomInt(256)
+  const blue = getRandomInt(256)
+  const color = `rgb(${red} ${green} ${blue})`
+  contenedor.style.backgroundColor = color
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+// Mostrar primera frase y contarla
 document.addEventListener('DOMContentLoaded', () => {
   const inicial = indiceAleatorioDistinto(-1);
   if (mostrarFrase(inicial)) {
@@ -100,6 +119,7 @@ button.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' || e.key === ' ') {
     e.preventDefault();
     cambiarFrase();
+    
   }
 });
 

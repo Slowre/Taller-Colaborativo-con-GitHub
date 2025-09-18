@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Taller Git</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
@@ -13,22 +13,53 @@
         <div id="container" class="container card" role="region" aria-labelledby="titulo">
             <h1 id="titulo">Frases motivacionales</h1>
 
-            <p id="frase" class="phrase" aria-live="polite">
-                Presiona el botón para ver una frase…
-            </p>
+            <div class="phrase-container">
+                <blockquote id="frase" class="phrase" aria-live="polite">
+                    Presiona el botón para ver una frase…
+                </blockquote>
+            </div>
 
-            <!-- Contador -->
             <div class="counter" aria-live="polite" aria-atomic="true">
                 <span>Frases mostradas:</span>
                 <span id="contador" class="counter-number">0</span>
             </div>
 
-            <button id="cambiar-frase" class="btn" type="button" aria-label="Mostrar una frase aleatoria">
-                Ver Frase
-            </button>
+            <div class="buttons-section">
+                <button id="cambiar-frase" class="btn btn-primary" type="button"
+                    aria-label="Mostrar una frase aleatoria">
+                    Cambiar Frase
+                </button>
+                <button id="agregar-frase" class="btn btn-secondary" type="button"
+                    aria-label="Mostrar formulario para agregar nueva frase">
+                    Agregar Frase
+                </button>
+            </div>
         </div>
     </main>
 
+    <div id="modal-agregar" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Agregar Nueva Frase</h2>
+                <button id="modal-close" class="modal-close" aria-label="Cerrar modal">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body">
+                <input id="nueva-frase" type="text" placeholder="Escribe tu propia frase" maxlength="200"
+                    class="phrase-input" />
+            </div>
+            <div class="modal-footer">
+                <button id="guardar-frase" class="btn btn-success" type="button" aria-label="Guardar nueva frase">
+                    Guardar
+                </button>
+                <button id="cancelar-frase" class="btn btn-cancel" type="button" aria-label="Cancelar agregar frase">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="app.js"></script>
 

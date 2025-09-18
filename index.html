@@ -9,15 +9,24 @@
 </head>
 
 <body>
-    <main>
-        <div class="container" id="container">
+    <main class="site-main">
+        <div class="container card" role="region" aria-labelledby="titulo">
+            <h1 id="titulo">Frases motivacionales</h1>
 
-            <h1>Frases motivacionales</h1>
-            <p id="frase"></p>
-            <button id="cambiar-frase">VER FRASE</button>
+            <p id="frase" class="phrase" aria-live="polite">
+                Presiona el botón para ver una frase…
+            </p>
 
-            
-        </div>        
+            <!-- Contador -->
+            <div class="counter" aria-live="polite" aria-atomic="true">
+                <span>Frases mostradas:</span>
+                <span id="contador" class="counter-number">0</span>
+            </div>
+
+            <button id="cambiar-frase" class="btn" type="button" aria-label="Mostrar una frase aleatoria">
+                Ver Frase
+            </button>
+        </div>
     </main>
 
 </body>

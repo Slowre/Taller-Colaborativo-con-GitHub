@@ -11,6 +11,7 @@ const FRASES = [
 const fraseDiv = document.getElementById('frase');
 const button = document.getElementById('cambiar-frase');
 const contadorEl = document.getElementById('contador');
+const contenedor = document.getElementById('container');
 
 // Estado del contador 
 let contador = 0;
@@ -47,7 +48,20 @@ function cambiarFrase() {
   if (mostrarFrase(nuevo)) {
     contador += 1;
     actualizarContador();
+    changeColor()
   }
+}
+
+function changeColor() {
+  const red = getRandomInt(256)
+  const green = getRandomInt(256)
+  const blue = getRandomInt(256)
+  const color = `rgb(${red} ${green} ${blue})`
+  contenedor.style.backgroundColor = color
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
 }
 
 // Mostrar primera frase y contarla
@@ -68,5 +82,6 @@ button.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' || e.key === ' ') {
     e.preventDefault();
     cambiarFrase();
+    
   }
 });
